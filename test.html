@@ -140,17 +140,17 @@ span.psw {
     </div>
 
     <div class="container">
-      <label for="uname"><b>dang nhap</b></label>
+      <label for="uname"><b>tên đăng nhập</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="psw"><b>Mật khẩu</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
       
-      
-      <label for="uname"><b>mat khau</b></label>
-      <input type="text" placeholder="Enter mat khau" name="uname" required>
-      <button type="submit" onclick="return checkLogin()">đăng nhập</button>
+        
+    <button type="submit" onclick="return checkLogin()">Đăng nhập</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
-    
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -159,5 +159,32 @@ span.psw {
     </div>
   </form>
 </div>
+
+<script>
+    function checkLogin() {
+  var username = document.getElementsByName('uname')[0].value;
+  var password = document.getElementsByName('psw')[0].value;
+
+  if(username === 'admin' && password === 'admin') {
+    alert('Đăng nhập thành công!');
+    return true;
+  } else {
+    alert('Tên đăng nhập hoặc mật khẩu không đúng!');
+    return false;
+  }
+}
+
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
 </body>
 </html>
